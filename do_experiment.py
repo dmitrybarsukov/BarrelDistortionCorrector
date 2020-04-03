@@ -20,7 +20,7 @@ def rm_border(img: np.ndarray, shape: (int, int)) -> np.ndarray:
     #return #img[dh : dh + shape[0], dw : dw + shape[1]].copy()
 
 img = cv2.imread("samples\\2020_0401_212026_005.JPG")
-img2 = add_border(img, 0.08) # 0.08 for 4/3, 0.05 for 16:9
+img2 = add_border(img, 0.03) # 0.16 for 1:1, 0.08 for 4/3, 0.05 for 16:9, 0.03 for 21:9
 img2 = process_frame(img2, -1.3, 1.25)
 img2 = rm_border(img2, img.shape[0:2])
 st.image(img, use_column_width=True, channels='BGR')
