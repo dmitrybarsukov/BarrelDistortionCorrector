@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Process image",
+            "type": "python",
+            "request": "launch",
+            "program": "process_image.py",
+            "args": ["samples\\2020_0401_212034_008.JPG", "samples\\2020_0401_212026_005.JPG"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Show from webcam",
+            "type": "python",
+            "request": "launch",
+            "program": "show_webcam.py",
+            "console": "integratedTerminal"
+        },
+    ]
+}
