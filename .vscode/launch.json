@@ -2,11 +2,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Process image",
+            "name": "Process images",
             "type": "python",
             "request": "launch",
-            "program": "process_image.py",
+            "program": "process_images.py",
             "args": ["samples\\2020_0401_212034_008.JPG", "samples\\2020_0401_212026_005.JPG"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Process videos",
+            "type": "python",
+            "request": "launch",
+            "program": "process_videos.py",
+            "args": ["samples\\2020_0407_125138_003.MOV"],
             "console": "integratedTerminal"
         },
         {

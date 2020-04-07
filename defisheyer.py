@@ -81,12 +81,15 @@ class BaseDeFisheyer:
     def __undistort_self(self):
         cv2.undistort(self.temp_img_in, self.cam_matrix, self.coef_matrix, dst=self.temp_img_out)
 
+    def get_new_frame_size(self) -> (int, int):
+        return self.right_crop - self.left_crop, self.bottom_crop - self.top_crop
+
     def process_frame(self, img: np.ndarray) -> np.ndarray:
         self.__check_frame_size(img)
         self.temp_img_in[self.dh : self.dh + self.height, self.dw : self.dw + self.width] = img
         self.__undistort_self()
         cropped = self.temp_img_out[self.top_crop : self.bottom_crop, self.left_crop : self.right_crop]
-        return cv2.resize(cropped, (self.width, self.height))
+        return cropped#cv2.resize(cropped, (self.width, self.height))
 
 
 def process_frame(
